@@ -1,0 +1,19 @@
+body {
+  margin: 0;
+  font-family: Inter, sans-serif;
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+.course-card {
+  background: linear-gradient(135deg, #1e293b, #020617);
+  border-radius: 16px;
+  padding: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.course-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,.4);
+}

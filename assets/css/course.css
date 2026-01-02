@@ -1,0 +1,30 @@
+.course-layout {
+display: grid;
+grid-template-columns: 2fr 1fr;
+gap: 32px;
+}
+
+
+video, iframe {
+width: 100%;
+aspect-ratio: 16/9;
+border-radius: var(--radius);
+border: 1px solid #1e293b;
+}
+
+
+#quiz div {
+margin-bottom: 20px;
+padding: 16px;
+background: #020617;
+border-radius: 12px;
+border: 1px solid #1e293b;
+}
+
+
+#result {
+margin-top: 24px;
+padding: 20px;
+background: linear-gradient(135deg, #020617, #020617cc);
+border-radius: var(--radius);
+}

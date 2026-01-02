@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Course | EdTech</title>
+
+  <link rel="stylesheet" href="assets/css/base.css" />
+
+  <style>
+    /* ================= course page ================= */
+    body { background: #020617; }
+
+    .course-header {
+      padding: 32px;
+      border-bottom: 1px solid #1e293b;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .course-header h1 { font-size: 28px; }
+
+    .back-btn {
+      background: #0ea5e9;
+      color: #020617;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .course-layout {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 32px;
+      padding: 32px;
+    }
+
+    /* VIDEO */
+    .video-box {
+      background: #020617;
+      border: 1px solid #1e293b;
+      border-radius: 18px;
+      padding: 16px;
+    }
+
+    .video-placeholder {
+      height: 360px;
+      background: linear-gradient(145deg,#020617,#020617);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #38bdf8;
+      font-size: 20px;
+      margin-bottom: 16px;
+    }
+
+    .lesson-desc { color: #94a3b8; }
+
+    /* QUIZ */
+    .quiz-box {
+      background: #020617;
+      border: 1px solid #1e293b;
+      border-radius: 18px;
+      padding: 24px;
+    }
+
+    .quiz-box h2 { margin-bottom: 16px; }
+
+    .question {
+      margin-bottom: 16px;
+      padding: 12px;
+      border-radius: 12px;
+      background: #020617;
+      border: 1px solid #1e293b;
+      cursor: pointer;
+      transition: 0.25s;
+    }
+
+    .question:hover { border-color: #38bdf8; }
+
+    .question.correct { border-color: #22c55e; color: #22c55e; }
+    .question.wrong { border-color: #ef4444; color: #ef4444; }
+
+    .result-box {
+      margin-top: 16px;
+      font-weight: 600;
+      color: #38bdf8;
+    }
+
+    @media(max-width: 900px) {
+      .course-layout { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="course-header">
+    <h1 id="courseTitle">Khóa học</h1>
+    <button class="back-btn" onclick="location.href='dashboard.html'">Quay lại</button>
+  </header>
+
+  <div class="course-layout">
+
+    <!-- VIDEO -->
+    <div class="video-box">
+      <div class="video-placeholder">Video bài giảng</div>
+      <p id="lessonDesc" class="lesson-desc"></p>
+    </div>
+
+    <!-- QUIZ -->
+    <div class="quiz-box">
+      <h2>Câu hỏi</h2>
+      <div id="quiz"></div>
+      <div id="result" class="result-box"></div>
+    </div>
+
+  </div>
+
+
+<script type="module">
+import { courses, analyzeAnswers } from "./assets/js/data.js";
+
+/* ========= load course ========= */
+const courseId = localStorage.getItem("currentCourse");
+
+if (!courseId) {
+  alert("Vui lòng chọn khóa học từ Dashboard");
+  location.href = "dashboard.html";
+}
+
+const course = courses.find(c => c.id === courseId);
+
+if (!course || !course.lessons.length) {
+  alert("Khóa học chưa có bài học");
+  location.href = "dashboard.html";
+}
+
+
+const courseTitle = document.getElementById("courseTitle");
+const videoBox = document.querySelector(".video-placeholder");
+const lessonDesc = document.getElementById("lessonDesc");
+const quizContainer = document.getElementById("quiz");
+const resultBox = document.getElementById("result");
+
+
+const lesson = course.lessons[0];
+
+courseTitle.textContent = course.title;
+lessonDesc.textContent = lesson.summary;
+
+
+videoBox.innerHTML = `
+  <iframe
+    width="100%"
+    height="360"
+    src="${lesson.videoUrl}"
+    frameborder="0"
+    allowfullscreen>
+  </iframe>
+`;
+
+
+quizContainer.innerHTML = "";
+
+lesson.questions.forEach((q, index) => {
+  const div = document.createElement("div");
+  div.className = "question";
+
+  div.innerHTML = `
+    <strong>${index + 1}. ${q.question}</strong>
+    ${q.options.map((opt, i) => `
+      <div>
+        <input type="radio" name="q${index}" value="${i}">
+        ${opt}
+      </div>
+    `).join("")}
+  `;
+
+  quizContainer.appendChild(div);
+});
+
+const submitBtn = document.createElement("button");
+submitBtn.textContent = "Nộp bài";
+submitBtn.style.marginTop = "16px";
+submitBtn.style.padding = "10px 16px";
+submitBtn.style.borderRadius = "8px";
+submitBtn.style.border = "none";
+submitBtn.style.cursor = "pointer";
+
+quizContainer.appendChild(submitBtn);
+
+submitBtn.addEventListener("click", () => {
+  const answers = [];
+
+  lesson.questions.forEach((_, i) => {
+    const checked = document.querySelector(`input[name="q${i}"]:checked`);
+    answers.push(checked ? Number(checked.value) : -1);
+  });
+
+  const result = analyzeAnswers(answers, lesson.questions);
+
+  resultBox.innerHTML = `
+    <h3>Kết quả</h3>
+    <p>Điểm: ${result.score}/${result.total}</p>
+    ${
+      Object.keys(result.weakSkills).length
+        ? `<p>Kỹ năng cần cải thiện: ${Object.keys(result.weakSkills).join(", ")}</p>`
+        : `<p>Rất tốt! Bạn làm đúng tất cả</p>`
+    }
+  `;
+});
+</script>
+
+
+</body>
+</html>

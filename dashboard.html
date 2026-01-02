@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard | EdTech App</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/dashboard.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="app-header">
+    <div class="logo">ULTIMATE</div>
+    <div class="user-info">
+      <span id="userName">Xin chào</span>
+      <button id="logoutBtn">Đăng xuất</button>
+    </div>
+  </header>
+
+  <!-- ===== LAYOUT ===== -->
+  <div class="app-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <nav>
+        <ul>
+          <li class="active" data-view="overview">Tổng quan</li>
+          <li data-view="courses">Khóa học</li>
+          <li data-view="practice">Luyện tập</li>
+          <li data-view="history">Lịch sử</li>
+          <li data-view="profile">Hồ sơ</li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+      <!-- OVERVIEW -->
+      <section class="view active" id="overview">
+        <h1>Tổng quan học tập</h1>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <h3>Khóa học</h3>
+            <p id="totalCourses">0</p>
+          </div>
+          <div class="stat-card">
+            <h3>Bài đã làm</h3>
+            <p id="totalLessons">0</p>
+          </div>
+          <div class="stat-card">
+            <h3>Điểm trung bình</h3>
+            <p id="avgScore">0%</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- COURSES -->
+      <section class="view" id="courses">
+        <h1>Danh sách khóa học</h1>
+        <div id="courseList" class="course-grid"></div>
+      </section>
+
+      <!-- PRACTICE -->
+      <section class="view" id="practice">
+        <h1>Luyện tập</h1>
+        <p>Làm bài và cải thiện kỹ năng yếu của bạn.</p>
+        <div id="practiceBox"></div>
+      </section>
+
+      <!-- HISTORY -->
+      <section class="view" id="history">
+        <h1>Lịch sử học tập</h1>
+        <div id="historyList"></div>
+      </section>
+
+      <!-- PROFILE -->
+      <section class="view" id="profile">
+        <h1>Hồ sơ cá nhân</h1>
+        <div class="profile-card">
+          <p><strong>Tên:</strong> <span id="profileName"></span></p>
+          <p><strong>Email:</strong> <span id="profileEmail"></span></p>
+        </div>
+      </section>
+
+    </main>
+  </div>
+  <script type="module" src="assets/js/dashboard.js"></script>
+</body>
+</html>

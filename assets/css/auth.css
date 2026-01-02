@@ -1,0 +1,25 @@
+.auth-container {
+display: grid;
+place-items: center;
+min-height: calc(100vh - 80px);
+}
+
+
+.auth-card {
+width: 380px;
+background: linear-gradient(180deg, #020617, #020617dd);
+border-radius: var(--radius);
+padding: 32px;
+box-shadow: 0 30px 80px rgba(0,0,0,.5);
+}
+
+
+.auth-card input {
+width: 100%;
+padding: 14px;
+margin: 16px 0 24px;
+border-radius: 12px;
+border: 1px solid #1e293b;
+background: #020617;
+color: var(--text-main);
+}

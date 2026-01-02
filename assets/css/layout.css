@@ -1,0 +1,20 @@
+.sidebar{
+position:fixed;left:0;top:0;width:220px;height:100vh;
+background:#111827;color:#fff;padding:24px
+}
+.sidebar h2{margin-bottom:32px}
+.sidebar nav a{display:block;margin-bottom:16px;opacity:.8}
+.sidebar nav a.active{opacity:1;font-weight:600}
+
+
+.content{margin-left:220px;padding:32px}
+.topbar{margin-bottom:32px}
+.course-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:24px}
+.header{
+display:flex;justify-content:space-between;align-items:center;
+padding:24px 64px;background:#fff;box-shadow:0 4px 20px rgba(0,0,0,.05)
+}
+.header nav a{margin-right:24px}
+.header button{padding:8px 16px}
+.hero{text-align:center;padding:120px 24px}
+.footer{text-align:center;padding:32px;opacity:.6}
