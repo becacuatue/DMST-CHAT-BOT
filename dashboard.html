@@ -9,6 +9,12 @@
   <link rel="stylesheet" href="assets/css/base.css" />
   <link rel="stylesheet" href="assets/css/dashboard.css" />
   <link rel="stylesheet" href="assets/css/community.css" />
+  <link rel="stylesheet" href="assets/css/analytics.css">
+  <link rel="stylesheet" href="assets/css/ai-analysis.css">
+  <link rel="stylesheet" href="assets/css/practice.css">
+
+
+
 </head>
 <body>
 
@@ -91,22 +97,181 @@
 
       <!-- OVERVIEW -->
       <section class="view active" id="overview">
-        <h1>Tổng quan học tập</h1>
-        <div class="stats-grid">
-          <div class="stat-card">
-            <h3>Khóa học</h3>
-            <p id="totalCourses">0</p>
+      <h1>Tổng quan học tập</h1>
+      <!-- AI ANALYSIS BOT -->
+      <section class="ai-analysis">
+
+        <div class="ai-header">
+          <div class="ai-avatar">AI</div>
+          <div>
+            <h2>AI Learning Analyst</h2>
+            <p>Phân tích hành vi & năng lực học tập cá nhân</p>
           </div>
-          <div class="stat-card">
-            <h3>Bài đã làm</h3>
-            <p id="totalLessons">0</p>
+          <span class="ai-status">● Online</span>
+        </div>
+
+        <div class="ai-report">
+
+          <div class="ai-message bot">
+            Xin chào   
+            Tôi đã phân tích dữ liệu học tập AI của bạn trong 30 ngày gần nhất.
           </div>
-          <div class="stat-card">
-            <h3>Điểm trung bình</h3>
-            <p id="avgScore">0%</p>
+
+          <div class="ai-message bot highlight">
+            <strong>Nhận định chính:</strong><br>
+            Bạn có xu hướng học tốt các khái niệm mang tính <strong>logic & mô hình hóa</strong>,
+            đặc biệt là Machine Learning cơ bản.
+          </div>
+
+          <div class="ai-message bot">
+            <strong>Mô hình tiếp thu:</strong><br>
+            • Học hiệu quả nhất vào buổi tối  
+            • Ghi nhớ tốt khi học qua ví dụ thực tế  
+            • Dễ hụt hơi ở các phần toán nền
+          </div>
+
+          <div class="ai-message bot warning">
+            <strong>Rủi ro phát hiện:</strong><br>
+            Nếu không củng cố <em>Linear Algebra</em> và <em>Probability</em>,
+            bạn sẽ gặp khó khăn khi học Deep Learning.
+          </div>
+
+          <div class="ai-message bot success">
+            <strong>Đề xuất lộ trình tối ưu:</strong><br>
+            1. Ôn Linear Regression (3 ngày)<br>
+            2. Thực hành Mini Project ML (5 ngày)<br>
+            3. Chuyển sang Neural Network cơ bản
+          </div>
+
+        </div>
+
+        <div class="ai-input-box">
+          <input
+            type="text"
+            placeholder="AI Mentor đang phân tích... (demo)"
+            disabled
+          />
+          <button disabled>Gửi</button>
+        </div>
+
+      </section>
+
+
+      <!-- STATS -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <h3>Khóa học</h3>
+          <p id="totalCourses">6</p>
+        </div>
+        <div class="stat-card">
+          <h3>Bài đã làm</h3>
+          <p id="totalLessons">128</p>
+        </div>
+        <div class="stat-card">
+          <h3>Điểm trung bình</h3>
+          <p id="avgScore">82%</p>
+        </div>
+      </div>
+
+      <!-- ANALYTICS -->
+      <div class="analytics-grid">
+
+        <div class="analytics-card">
+          <h3>Kiến thức chủ đạo</h3>
+          <ul class="tag-list">
+            <li>Artificial Intelligence</li>
+            <li>Machine Learning</li>
+            <li>Python</li>
+            <li>Data Analysis</li>
+          </ul>
+        </div>
+
+        <div class="analytics-card">
+          <h3>Khả năng tiếp thu</h3>
+          <div class="speed-meter">
+            <div class="speed-fill" style="width:78%"></div>
+          </div>
+          <p class="metric-desc">Đánh giá: <strong>Nhanh – ổn định</strong></p>
+        </div>
+
+        <div class="analytics-card">
+          <h3>Kiến thức còn thiếu</h3>
+          <ul class="weak-list">
+            <li>Feature Engineering</li>
+            <li>Model Evaluation</li>
+            <li>AI Deployment</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- MINDMAP & PATH -->
+      <div class="mindmap-path">
+
+        <div class="mindmap">
+          <h3>Sơ đồ tư duy AI</h3>
+          <div class="mindmap-box">
+            <span>AI</span>
+            <span>ML</span>
+            <span>DL</span>
+            <span>NLP</span>
+            <span>CV</span>
           </div>
         </div>
-      </section>
+
+        <div class="learning-path">
+          <h3>Lộ trình học</h3>
+          <ul class="timeline">
+            <li class="done">Python & Math</li>
+            <li class="done">Machine Learning</li>
+            <li class="active">Deep Learning</li>
+            <li>Computer Vision</li>
+            <li>NLP & LLM</li>
+            <li>Deployment</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- ATTENDANCE -->
+      <div class="attendance-board">
+        <h3>Điểm danh 30 ngày</h3>
+        <div class="attendance-grid">
+          <span class="active"></span><span class="active"></span><span></span>
+          <span class="active"></span><span class="active"></span><span></span>
+          <span class="active"></span><span class="active"></span><span></span>
+          <span class="active"></span><span></span><span class="active"></span>
+        </div>
+        <p class="attendance-note">Chuỗi học liên tục: <strong>5 ngày</strong></p>
+      </div>
+
+      <!-- KNOWLEDGE CHART -->
+      <div class="knowledge-chart">
+        <h3>Tiến độ kiến thức</h3>
+
+        <div class="chart-row">
+          <span>HTML / CSS</span>
+          <div class="bar"><div style="width:90%"></div></div>
+        </div>
+
+        <div class="chart-row">
+          <span>JavaScript</span>
+          <div class="bar"><div style="width:75%"></div></div>
+        </div>
+
+        <div class="chart-row">
+          <span>Machine Learning</span>
+          <div class="bar"><div style="width:60%"></div></div>
+        </div>
+
+        <div class="chart-row">
+          <span>Deep Learning</span>
+          <div class="bar"><div style="width:35%"></div></div>
+        </div>
+
+      </div>
+    </section>
+
 
       <!-- COURSES -->
       <section class="view" id="courses">
@@ -116,10 +281,120 @@
 
       <!-- PRACTICE -->
       <section class="view" id="practice">
-        <h1>Luyện tập</h1>
-        <p>Làm bài và cải thiện kỹ năng yếu của bạn.</p>
-        <div id="practiceBox"></div>
+
+        <h1>AI Practice Arena</h1>
+        <p class="practice-sub">
+          Khu vực luyện tập thông minh được AI cá nhân hóa theo năng lực của bạn
+        </p>
+
+        <!-- AI PRACTICE OVERVIEW -->
+        <div class="practice-overview">
+
+          <div class="practice-metric">
+            <h3>Năng lực AI</h3>
+            <span class="metric-value">72%</span>
+            <p>Khả năng suy luận & mô hình hóa</p>
+          </div>
+
+          <div class="practice-metric">
+            <h3>Độ khó hiện tại</h3>
+            <span class="metric-value level">Intermediate</span>
+            <p>AI tự động điều chỉnh</p>
+          </div>
+
+          <div class="practice-metric">
+            <h3>Chuỗi luyện tập</h3>
+            <span class="metric-value streak">🔥 14 ngày</span>
+            <p>Duy trì học liên tục</p>
+          </div>
+
+          <div class="practice-metric danger">
+            <h3>Lỗ hổng kiến thức</h3>
+            <span class="metric-value">3</span>
+            <p>Linear Algebra, Loss Function, Overfitting</p>
+          </div>
+
+        </div>
+
+        <!-- AI GENERATED CHALLENGES -->
+        <h2 class="section-title">🔥 Thử thách do AI tạo</h2>
+
+        <div class="challenge-grid">
+
+          <div class="challenge-card">
+            <span class="tag easy">Easy</span>
+            <h3>Phân tích Dataset giả</h3>
+            <p>
+              AI tạo ra một tập dữ liệu ảo.  
+              Nhiệm vụ của bạn là xác định feature quan trọng.
+            </p>
+            <button>Bắt đầu</button>
+          </div>
+
+          <div class="challenge-card">
+            <span class="tag medium">Medium</span>
+            <h3>Dự đoán mô hình</h3>
+            <p>
+              Quan sát learning curve và đoán xem model có bị overfitting hay không.
+            </p>
+            <button>Bắt đầu</button>
+          </div>
+
+          <div class="challenge-card">
+            <span class="tag hard">Hard</span>
+            <h3>Debug AI Model</h3>
+            <p>
+              AI cố tình tạo ra mô hình sai.  
+              Bạn phải tìm nguyên nhân thất bại.
+            </p>
+            <button>Bắt đầu</button>
+          </div>
+
+        </div>
+
+        <!-- SIMULATION LAB -->
+        <h2 class="section-title"> AI Simulation Lab</h2>
+
+        <div class="simulation-box">
+
+          <div class="sim-screen">
+            <p class="sim-title">Mô phỏng huấn luyện Neural Network</p>
+            <div class="sim-bars">
+              <div><span>Epoch</span><strong>120</strong></div>
+              <div><span>Accuracy</span><strong>89%</strong></div>
+              <div><span>Loss</span><strong>0.42</strong></div>
+            </div>
+            <div class="sim-warning">
+              AI phát hiện dấu hiệu Overfitting ở Epoch 90
+            </div>
+          </div>
+
+          <div class="sim-actions">
+            <button>Giảm Learning Rate</button>
+            <button>Thêm Regularization</button>
+            <button>Dừng huấn luyện</button>
+          </div>
+
+        </div>
+
+        <!-- BRAIN DAMAGE MODE -->
+        <h2 class="section-title"> Brain Damage Mode</h2>
+        <p class="practice-sub">
+          Chế độ luyện tập siêu khó – chỉ dành cho người thích đau não
+        </p>
+
+        <div class="brain-mode">
+          <ul>
+            <li> Trả lời trong 10 giây</li>
+            <li> Sai 1 câu là reset</li>
+            <li> Câu hỏi không lặp</li>
+            <li> AI học lại từ lỗi của bạn</li>
+          </ul>
+          <button class="danger-btn">Kích hoạt Brain Damage Mode</button>
+        </div>
+
       </section>
+
 
       <!-- HISTORY -->
       <section class="view" id="history">

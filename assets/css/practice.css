@@ -1,0 +1,162 @@
+/* ===== PRACTICE ARENA ===== */
+
+.practice-sub {
+  opacity: 0.8;
+  margin-bottom: 24px;
+}
+
+/* OVERVIEW */
+.practice-overview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.practice-metric {
+  background: #020617;
+  border: 1px solid #1e293b;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.practice-metric h3 {
+  margin-bottom: 8px;
+}
+
+.metric-value {
+  font-size: 28px;
+  font-weight: 800;
+  color: #38bdf8;
+}
+
+.metric-value.level {
+  color: #a78bfa;
+}
+
+.metric-value.streak {
+  color: #f97316;
+}
+
+.practice-metric.danger {
+  border-color: #ef4444;
+}
+
+/* CHALLENGES */
+.section-title {
+  margin: 32px 0 16px;
+}
+
+.challenge-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.challenge-card {
+  background: linear-gradient(180deg, #020617, #020617ee);
+  border: 1px solid #1e293b;
+  border-radius: 22px;
+  padding: 24px;
+  position: relative;
+}
+
+.challenge-card h3 {
+  margin: 12px 0;
+}
+
+.challenge-card button {
+  margin-top: 16px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 14px;
+  border: none;
+  background: #38bdf8;
+  color: #020617;
+  font-weight: 600;
+}
+
+.tag {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.tag.easy { background: #22c55e; color: #020617; }
+.tag.medium { background: #facc15; color: #020617; }
+.tag.hard { background: #ef4444; }
+
+/* SIMULATION */
+.simulation-box {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  margin-top: 16px;
+}
+
+.sim-screen {
+  background: #020617;
+  border: 1px solid #1e293b;
+  border-radius: 22px;
+  padding: 24px;
+}
+
+.sim-bars {
+  display: flex;
+  gap: 24px;
+  margin: 16px 0;
+}
+
+.sim-bars div strong {
+  display: block;
+  font-size: 22px;
+  color: #38bdf8;
+}
+
+.sim-warning {
+  margin-top: 12px;
+  color: #f97316;
+}
+
+.sim-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sim-actions button {
+  padding: 12px;
+  border-radius: 14px;
+  border: none;
+  background: #1e293b;
+  color: #fff;
+}
+
+/* BRAIN MODE */
+.brain-mode {
+  margin-top: 24px;
+  padding: 24px;
+  border-radius: 24px;
+  background: radial-gradient(circle at top, #3b0764, #020617);
+  border: 1px solid #7c3aed;
+}
+
+.brain-mode ul {
+  margin-bottom: 16px;
+}
+
+.brain-mode li {
+  margin-bottom: 6px;
+}
+
+.danger-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 18px;
+  border: none;
+  background: #ef4444;
+  font-weight: 700;
+}
