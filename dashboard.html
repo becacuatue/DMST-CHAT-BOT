@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dashboard | EdTech App</title>
+  <title>Dashboard | ULTIMATE</title>
 
   <!-- CSS -->
   <link rel="stylesheet" href="assets/css/base.css" />
   <link rel="stylesheet" href="assets/css/dashboard.css" />
+  <link rel="stylesheet" href="assets/css/community.css" />
 </head>
 <body>
 
@@ -32,12 +33,61 @@
           <li data-view="practice">Luyện tập</li>
           <li data-view="history">Lịch sử</li>
           <li data-view="profile">Hồ sơ</li>
+          <li data-view="community">Cộng đồng</li>
         </ul>
       </nav>
     </aside>
 
     <!-- MAIN CONTENT -->
     <main class="main-content">
+    <!-- COMMUNITY -->
+      <section class="view" id="community">
+        <h1>Cộng đồng AI Learning</h1>
+
+        <div class="community-layout">
+
+          <!-- FEED -->
+          <div class="community-feed" id="communityFeed"></div>
+
+          <!-- AI ASSISTANT -->
+          <div class="ai-assistant">
+            <h3>AI Mentor</h3>
+            <p class="ai-desc">
+              Gợi ý học tập cá nhân hóa dựa trên lộ trình AI của bạn
+            </p>
+
+            <div class="ai-chat">
+              <div class="ai-message bot">
+                Chào bạn 
+                Dựa trên lộ trình AI, tôi gợi ý bạn tập trung vào:
+                <strong>Machine Learning Fundamentals</strong>
+              </div>
+
+              <div class="ai-message user">
+                Tôi nên bắt đầu từ đâu?
+              </div>
+
+              <div class="ai-message bot">
+                Bạn nên học theo thứ tự:
+                <ul>
+                  <li>Linear Regression</li>
+                  <li>Classification</li>
+                  <li>Model Evaluation</li>
+                </ul>
+              </div>
+            </div>
+
+            <input
+              type="text"
+              class="ai-input"
+              placeholder="Hỏi AI Mentor về lộ trình AI của bạn..."
+              disabled
+            />
+          </div>
+
+        </div>
+      </section>
+
 
       <!-- OVERVIEW -->
       <section class="view active" id="overview">

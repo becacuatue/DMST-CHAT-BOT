@@ -84,3 +84,58 @@ logoutBtn.addEventListener("click", () => {
 
 renderCourses();
 updateStats();
+const communityPosts = [
+  {
+    title: "Học AI từ con số 0: Đừng lao vào Deep Learning quá sớm",
+    author: "Nguyễn Minh AI",
+    date: "2 ngày trước",
+    image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c",
+    content:
+      "Sai lầm lớn nhất của người mới học AI là nhảy ngay vào Neural Network..."
+  },
+  {
+    title: "Machine Learning quan trọng hơn framework",
+    author: "Lê Hoàng",
+    date: "3 ngày trước",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475",
+    content:
+      "Nắm vững toán học và tư duy mô hình sẽ giúp bạn đi xa hơn..."
+  },
+  {
+    title: "Lộ trình AI cho Web Developer",
+    author: "Trần Anh",
+    date: "4 ngày trước",
+    image: "https://images.unsplash.com/photo-1526378722443-4ac5e2c47a3a",
+    content:
+      "Nếu bạn xuất thân từ Web, hãy bắt đầu AI bằng Data Analysis..."
+  },
+];
+const communityFeed = document.getElementById("communityFeed");
+
+function renderCommunity() {
+  if (!communityFeed) return;
+
+  communityFeed.innerHTML = "";
+
+  communityPosts.forEach(post => {
+    const div = document.createElement("div");
+    div.className = "post-card";
+
+    div.innerHTML = `
+      <div class="post-image">
+        <img src="${post.image}" alt="">
+      </div>
+      <div class="post-content">
+        <h3>${post.title}</h3>
+        <div class="post-meta">
+          ${post.author} • ${post.date}
+        </div>
+        <p>${post.content}</p>
+      </div>
+    `;
+
+    communityFeed.appendChild(div);
+  });
+}
+
+renderCommunity();
