@@ -1,7 +1,7 @@
 export const courses = [
   {
     id: "js-basic",
-    title: "JavaScript Cơ Bản",
+    title: "Giới thiệu chung về NotebookLM",
     level: "Beginner",
     description: "Nắm vững nền tảng JavaScript",
     lessons: [
@@ -30,7 +30,7 @@ export const courses = [
 
   {
     id: "html-css",
-    title: "HTML & CSS Professional",
+    title: "Truy cập và giao diện NotebookLM",
     level: "Beginner",
     description: "Xây dựng giao diện chuẩn thương mại",
     lessons: [
@@ -51,9 +51,9 @@ export const courses = [
     ]
   },
 
-  { id: "react", title: "React Cơ Bản", level: "Intermediate", description: "Component & State", lessons: [] },
-  { id: "node", title: "Node.js Backend", level: "Intermediate", description: "Server & API", lessons: [] },
-  { id: "db", title: "Database Design", level: "Intermediate", description: "SQL & NoSQL", lessons: [] },
+  { id: "react", title: "Tạo và quản lý Notebook", level: "Intermediate", description: "Component & State", lessons: [] },
+  { id: "node", title: "Thêm và quản lý tài liệu nguồn", level: "Intermediate", description: "Server & API", lessons: [] },
+  { id: "db", title: "Hỏi – đáp với AI trong NotebookLM", level: "Intermediate", description: "SQL & NoSQL", lessons: [] },
   { id: "algo", title: "Thuật Toán", level: "Advanced", description: "Logic & Performance", lessons: [] },
   { id: "system", title: "System Design", level: "Advanced", description: "Scalable system", lessons: [] },
   { id: "security", title: "Web Security", level: "Advanced", description: "OWASP", lessons: [] },
