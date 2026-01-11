@@ -1,9 +1,9 @@
 export const courses = [
   {
     id: "js-basic",
-    title: "Giới thiệu chung về NotebookLM",
+    title: "Giới thiệu về đạo đức AI",
     level: "Beginner",
-    description: "Nắm vững nền tảng JavaScript",
+    description: "Vai trò của đạo đức AI trong học tập và công việc",
     lessons: [
       {
         id: "js-1",
@@ -30,9 +30,9 @@ export const courses = [
 
   {
     id: "html-css",
-    title: "Truy cập và giao diện NotebookLM",
+    title: "Các nguyên tắc đạo đức cốt lõi trong AI",
     level: "Beginner",
-    description: "Xây dựng giao diện chuẩn thương mại",
+    description: "Nguyên tắc công bằng và không thiên lệch",
     lessons: [
       {
         id: "html-1",
@@ -51,14 +51,14 @@ export const courses = [
     ]
   },
 
-  { id: "react", title: "Tạo và quản lý Notebook", level: "Intermediate", description: "Component & State", lessons: [] },
+  { id: "react", title: "CÁC CÔNG CỤ AI PHỔ BIẾN HIỆN NAY", level: "Intermediate", description: "Tổng quan về các nhóm công cụ AI", lessons: [] },
   { id: "node", title: "Thêm và quản lý tài liệu nguồn", level: "Intermediate", description: "Server & API", lessons: [] },
-  { id: "db", title: "Hỏi – đáp với AI trong NotebookLM", level: "Intermediate", description: "SQL & NoSQL", lessons: [] },
-  { id: "algo", title: "Thuật Toán", level: "Advanced", description: "Logic & Performance", lessons: [] },
-  { id: "system", title: "System Design", level: "Advanced", description: "Scalable system", lessons: [] },
-  { id: "security", title: "Web Security", level: "Advanced", description: "OWASP", lessons: [] },
+  { id: "db", title: "Thực tiễn sử dụng AI trong đời sống và học tập", level: "Intermediate", description: "AI trong học tập, nghiên cứu và làm bài tập", lessons: [] },
+  { id: "algo", title: "Giới thiệu chung về Chatbot AI", level: "Advanced", description: "Các chatbot AI phổ biến hiện nay", lessons: [] },
+  { id: "system", title: "Tổng quan về AI trong xử lý hình ảnh", level: "Advanced", description: "Scalable system", lessons: [] },
+  { id: "security", title: "Các công cụ chỉnh sửa hình ảnh phổ biến", level: "Advanced", description: "OWASP", lessons: [] },
   { id: "ai", title: "AI for Developers", level: "Advanced", description: "ML & AI", lessons: [] },
-  { id: "career", title: "Career Path", level: "All", description: "CV & Interview", lessons: [] }
+  { id: "career", title: "Vai trò của AI trong thuyết trình hiện đại", level: "All", description: "CV & Interview", lessons: [] }
 ];
 
 export function analyzeAnswers(answers, questions) {
